@@ -1,19 +1,19 @@
 function envEmail(para, corpo){
     return new Promise((resolve, reject) =>{
         setTimeout(() =>{
-            var deuErro = true;
+            var deuErro = false;
             if(deuErro){
-                reject();
+                reject("Deu erro");
             } else {
-                resolve({error: "deu erro"});
+                resolve("EMAIL OK !");
             }
         }, 4000);
     });
 };
 
 
-envEmail("a", "b").then(_ =>{
-    console.log("email OK");
+envEmail("a", "b").then((ret) =>{
+    console.log(ret);
 }).catch((error)=>{
     console.log(error);
 });
